@@ -10,8 +10,8 @@ public class Signing {
 
     public static void main(String[] args) {
 
-        BigInteger n  = new BigInteger(Constants.PUBLIC_MODULUS, 16);
-        BigInteger d  = new BigInteger(Constants.PRIVATE_EXPONENT, 16);
+        BigInteger n = new BigInteger(Constants.PUBLIC_MODULUS, 16);
+        BigInteger d = new BigInteger(Constants.PRIVATE_EXPONENT, 16);
         BigInteger m1 = new BigInteger(Constants.MSG_OWE_2000, 16);
         BigInteger m2 = new BigInteger(Constants.MSG_OWE_3000, 16);
 

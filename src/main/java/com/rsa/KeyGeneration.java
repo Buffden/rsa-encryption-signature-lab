@@ -14,11 +14,11 @@ public class KeyGeneration {
         BigInteger q = new BigInteger(Constants.PRIME_Q, 16);
         BigInteger e = new BigInteger(Constants.KEYGEN_EXPONENT, 16);
 
-        BigInteger n   = p.multiply(q);
-        BigInteger p1  = p.subtract(BigInteger.ONE);
-        BigInteger q1  = q.subtract(BigInteger.ONE);
+        BigInteger n = p.multiply(q);
+        BigInteger p1 = p.subtract(BigInteger.ONE);
+        BigInteger q1 = q.subtract(BigInteger.ONE);
         BigInteger phi = p1.multiply(q1);
-        BigInteger d   = e.modInverse(phi);
+        BigInteger d = e.modInverse(phi);
 
         printBN("p   = ", p);
         printBN("q   = ", q);
