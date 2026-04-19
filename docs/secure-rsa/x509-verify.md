@@ -43,13 +43,13 @@ Verify an X.509 certificate the way a real TLS client does — not just the RSA 
 ## Run
 
 ```bash
-mvn exec:java -Dexec.mainClass="com.rsa.SecureX509Verification"
+mvn exec:java -Dexec.mainClass="com.rsa.secure.X509Verification"
 ```
 
 To save output to a file:
 
 ```bash
-mvn exec:java -Dexec.mainClass="com.rsa.SecureX509Verification" > outputs/secure-x509-verification.txt
+mvn exec:java -Dexec.mainClass="com.rsa.secure.X509Verification" > outputs/secure-rsa/x509-verification.txt
 ```
 
 ---
@@ -103,7 +103,7 @@ VALID
 
 ## Planned Class
 
-`SecureX509Verification.java`
+`com.rsa.secure.X509Verification`
 
 ---
 

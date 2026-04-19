@@ -32,7 +32,7 @@ mvn compile
 ## Step 3: Create the Outputs Directory
 
 ```bash
-mkdir -p outputs
+mkdir -p outputs/textbook-rsa
 ```
 
 ---
@@ -40,12 +40,12 @@ mkdir -p outputs
 ## Step 4: Run Individual Tasks
 
 ```bash
-mvn exec:java -Dexec.mainClass="com.rsa.KeyGeneration"
-mvn exec:java -Dexec.mainClass="com.rsa.Encryption"
-mvn exec:java -Dexec.mainClass="com.rsa.Decryption"
-mvn exec:java -Dexec.mainClass="com.rsa.Signing"
-mvn exec:java -Dexec.mainClass="com.rsa.Verification"
-mvn exec:java -Dexec.mainClass="com.rsa.X509Verification"
+mvn exec:java -Dexec.mainClass="com.rsa.textbook.KeyGeneration"
+mvn exec:java -Dexec.mainClass="com.rsa.textbook.Encryption"
+mvn exec:java -Dexec.mainClass="com.rsa.textbook.Decryption"
+mvn exec:java -Dexec.mainClass="com.rsa.textbook.Signing"
+mvn exec:java -Dexec.mainClass="com.rsa.textbook.Verification"
+mvn exec:java -Dexec.mainClass="com.rsa.textbook.X509Verification"
 ```
 
 ---
@@ -53,22 +53,22 @@ mvn exec:java -Dexec.mainClass="com.rsa.X509Verification"
 ## Step 5: Save Outputs to Text Files
 
 ```bash
-mvn exec:java -Dexec.mainClass="com.rsa.KeyGeneration" > outputs/key-generation.txt
-mvn exec:java -Dexec.mainClass="com.rsa.Encryption" > outputs/encryption.txt
-mvn exec:java -Dexec.mainClass="com.rsa.Decryption" > outputs/decryption.txt
-mvn exec:java -Dexec.mainClass="com.rsa.Signing" > outputs/signing.txt
-mvn exec:java -Dexec.mainClass="com.rsa.Verification" > outputs/verification.txt
-mvn exec:java -Dexec.mainClass="com.rsa.X509Verification" > outputs/x509-verification.txt
+mvn exec:java -Dexec.mainClass="com.rsa.textbook.KeyGeneration" > outputs/textbook-rsa/key-generation.txt
+mvn exec:java -Dexec.mainClass="com.rsa.textbook.Encryption" > outputs/textbook-rsa/encryption.txt
+mvn exec:java -Dexec.mainClass="com.rsa.textbook.Decryption" > outputs/textbook-rsa/decryption.txt
+mvn exec:java -Dexec.mainClass="com.rsa.textbook.Signing" > outputs/textbook-rsa/signing.txt
+mvn exec:java -Dexec.mainClass="com.rsa.textbook.Verification" > outputs/textbook-rsa/verification.txt
+mvn exec:java -Dexec.mainClass="com.rsa.textbook.X509Verification" > outputs/textbook-rsa/x509-verification.txt
 ```
 
 To suppress Maven build logs and get only program output:
 
 ```bash
-mvn exec:java -Dexec.mainClass="com.rsa.KeyGeneration" -q > outputs/key-generation.txt
+mvn exec:java -Dexec.mainClass="com.rsa.textbook.KeyGeneration" -q > outputs/textbook-rsa/key-generation.txt
 ```
 
 To view an output file:
 
 ```bash
-cat outputs/key-generation.txt
+cat outputs/textbook-rsa/key-generation.txt
 ```

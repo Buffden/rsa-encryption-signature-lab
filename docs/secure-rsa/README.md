@@ -9,7 +9,7 @@ The same RSA pipeline rebuilt using real-world standards — RSA-OAEP, RSA-PSS, 
 | File | Description |
 | --- | --- |
 | [instance-setup-guide.md](instance-setup-guide.md) | GCP Compute Engine instance setup and environment configuration |
-| [running.md](running.md) | Cloning, building, and running production-grade tasks |
+| [running.md](running.md) | Cloning, building, and running secure-rsa tasks |
 
 ---
 

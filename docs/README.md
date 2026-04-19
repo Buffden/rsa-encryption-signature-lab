@@ -10,8 +10,8 @@ This folder contains documentation for each task of the RSA Encryption and Signa
 | --- | --- |
 | [textbook-rsa/instance-setup-guide.md](textbook-rsa/instance-setup-guide.md) | GCP Compute Engine instance setup and environment configuration |
 | [textbook-rsa/running.md](textbook-rsa/running.md) | Cloning, building, and running textbook RSA tasks (`com.rsa.textbook`) |
-| [production-grade/instance-setup-guide.md](production-grade/instance-setup-guide.md) | GCP Compute Engine instance setup and environment configuration |
-| [production-grade/running.md](production-grade/running.md) | Cloning, building, and running production-grade tasks (`com.rsa.secure`) |
+| [secure-rsa/instance-setup-guide.md](secure-rsa/instance-setup-guide.md) | GCP Compute Engine instance setup and environment configuration |
+| [secure-rsa/running.md](secure-rsa/running.md) | Cloning, building, and running secure-rsa tasks (`com.rsa.secure`) |
 
 ---
 
@@ -37,18 +37,18 @@ The six tasks tell a complete story:
 
 ---
 
-## Production-Grade Migration
+## Secure RSA
 
 The same six tasks rebuilt under `com.rsa.secure` using real-world standards — RSA-OAEP, RSA-PSS, secure key generation, and constant-time verification.
 
 | # | File | Class | Description |
 | --- | --- | --- | --- |
-| 1 | [production-grade/key-generation.md](production-grade/key-generation.md) | `com.rsa.secure.KeyGeneration` | Secure 2048-bit key generation using SecureRandom |
-| 2 | [production-grade/encrypt.md](production-grade/encrypt.md) | `com.rsa.secure.Encryption` | Probabilistic encryption using RSA-OAEP with SHA-256 |
-| 3 | [production-grade/decrypt.md](production-grade/decrypt.md) | `com.rsa.secure.Decryption` | Decryption of RSA-OAEP encrypted ciphertext |
-| 4 | [production-grade/sign.md](production-grade/sign.md) | `com.rsa.secure.Signing` | Signing with SHA-256 hashing and RSA-PSS |
-| 5 | [production-grade/verify.md](production-grade/verify.md) | `com.rsa.secure.Verification` | Signature verification with RSA-PSS and constant-time comparison |
-| 6 | [production-grade/x509-verify.md](production-grade/x509-verify.md) | `com.rsa.secure.X509Verification` | Full X.509 chain validation with expiry, hostname, and revocation checks |
+| 1 | [secure-rsa/key-generation.md](secure-rsa/key-generation.md) | `com.rsa.secure.KeyGeneration` | Secure 2048-bit key generation using SecureRandom |
+| 2 | [secure-rsa/encrypt.md](secure-rsa/encrypt.md) | `com.rsa.secure.Encryption` | Probabilistic encryption using RSA-OAEP with SHA-256 |
+| 3 | [secure-rsa/decrypt.md](secure-rsa/decrypt.md) | `com.rsa.secure.Decryption` | Decryption of RSA-OAEP encrypted ciphertext |
+| 4 | [secure-rsa/sign.md](secure-rsa/sign.md) | `com.rsa.secure.Signing` | Signing with SHA-256 hashing and RSA-PSS |
+| 5 | [secure-rsa/verify.md](secure-rsa/verify.md) | `com.rsa.secure.Verification` | Signature verification with RSA-PSS and constant-time comparison |
+| 6 | [secure-rsa/x509-verify.md](secure-rsa/x509-verify.md) | `com.rsa.secure.X509Verification` | Full X.509 chain validation with expiry, hostname, and revocation checks |
 
 ---
 

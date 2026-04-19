@@ -30,13 +30,13 @@ Sign messages using SHA-256 hashing and RSA-PSS — the standard used in real-wo
 ## Run
 
 ```bash
-mvn exec:java -Dexec.mainClass="com.rsa.SecureSigning"
+mvn exec:java -Dexec.mainClass="com.rsa.secure.Signing"
 ```
 
 To save output to a file:
 
 ```bash
-mvn exec:java -Dexec.mainClass="com.rsa.SecureSigning" > outputs/secure-signing.txt
+mvn exec:java -Dexec.mainClass="com.rsa.secure.Signing" > outputs/secure-rsa/signing.txt
 ```
 
 ---
@@ -70,7 +70,7 @@ Observation: signatures differ between messages AND between runs — RSA-PSS ran
 
 ## Planned Class
 
-`SecureSigning.java`
+`com.rsa.secure.Signing`
 
 ---
 

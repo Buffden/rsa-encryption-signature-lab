@@ -11,7 +11,7 @@ Decrypt an RSA-OAEP encrypted ciphertext and recover the original plaintext.
 | Property | Textbook | Production |
 | --- | --- | --- |
 | Padding | None | RSA-OAEP with SHA-256 for both hash and MGF1 |
-| Input | Fixed ciphertext from Constants.java | Ciphertext produced by SecureEncryption |
+| Input | Fixed ciphertext from Constants.java | Ciphertext produced by `com.rsa.secure.Encryption` |
 | Process | Raw modular exponentiation | OAEP unpadding handled by the Cipher API |
 
 ---
@@ -20,7 +20,7 @@ Decrypt an RSA-OAEP encrypted ciphertext and recover the original plaintext.
 
 - Use `Cipher.getInstance("RSA/ECB/OAEPWithSHA-256AndMGF1Padding")` in decrypt mode
 - Pass the same explicit `OAEPParameterSpec` used during encryption — the hash and MGF1 algorithm must match exactly or decryption fails
-- Decrypt the ciphertext produced by `SecureEncryption`
+- Decrypt the ciphertext produced by ``com.rsa.secure.Encryption``
 - Verify the recovered plaintext matches the original
 
 ---
@@ -28,13 +28,13 @@ Decrypt an RSA-OAEP encrypted ciphertext and recover the original plaintext.
 ## Run
 
 ```bash
-mvn exec:java -Dexec.mainClass="com.rsa.SecureDecryption"
+mvn exec:java -Dexec.mainClass="com.rsa.secure.Decryption"
 ```
 
 To save output to a file:
 
 ```bash
-mvn exec:java -Dexec.mainClass="com.rsa.SecureDecryption" > outputs/secure-decryption.txt
+mvn exec:java -Dexec.mainClass="com.rsa.secure.Decryption" > outputs/secure-rsa/decryption.txt
 ```
 
 ---
@@ -63,7 +63,7 @@ Match: true
 
 ## Planned Class
 
-`SecureDecryption.java`
+`com.rsa.secure.Decryption`
 
 ---
 

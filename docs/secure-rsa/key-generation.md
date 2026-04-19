@@ -27,13 +27,13 @@ Generate a 2048-bit RSA key pair using cryptographically secure randomness inste
 ## Run
 
 ```bash
-mvn exec:java -Dexec.mainClass="com.rsa.SecureKeyGeneration"
+mvn exec:java -Dexec.mainClass="com.rsa.secure.KeyGeneration"
 ```
 
 To save output to a file:
 
 ```bash
-mvn exec:java -Dexec.mainClass="com.rsa.SecureKeyGeneration" > outputs/secure-key-generation.txt
+mvn exec:java -Dexec.mainClass="com.rsa.secure.KeyGeneration" > outputs/secure-rsa/key-generation.txt
 ```
 
 ---
@@ -63,7 +63,7 @@ d = 738B8D45C1D5A0CBC07AD5E98A8D0FAA...
 
 ## Planned Class
 
-`SecureKeyGeneration.java`
+`com.rsa.secure.KeyGeneration`
 
 ---
 

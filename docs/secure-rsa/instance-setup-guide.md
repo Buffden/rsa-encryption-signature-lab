@@ -127,37 +127,44 @@ cd rsa-encryption-signature-lab
 mvn compile
 
 # Run individual tasks
-mvn exec:java -Dexec.mainClass="com.rsa.SecureKeyGeneration"
-mvn exec:java -Dexec.mainClass="com.rsa.SecureEncryption"
-mvn exec:java -Dexec.mainClass="com.rsa.SecureDecryption"
-mvn exec:java -Dexec.mainClass="com.rsa.SecureSigning"
-mvn exec:java -Dexec.mainClass="com.rsa.SecureVerification"
+mvn exec:java -Dexec.mainClass="com.rsa.secure.KeyGeneration"
+mvn exec:java -Dexec.mainClass="com.rsa.secure.Encryption"
+mvn exec:java -Dexec.mainClass="com.rsa.secure.Decryption"
+mvn exec:java -Dexec.mainClass="com.rsa.secure.Signing"
+mvn exec:java -Dexec.mainClass="com.rsa.secure.Verification"
+mvn exec:java -Dexec.mainClass="com.rsa.secure.X509Verification"
 ```
 
 ### Save outputs to text files
 
 ```bash
 # Create the outputs directory
-mkdir -p outputs
+mkdir -p outputs/secure-rsa
 
 # Run each task and redirect output to a file
-mvn exec:java -Dexec.mainClass="com.rsa.SecureKeyGeneration" > outputs/secure-key-generation.txt
-mvn exec:java -Dexec.mainClass="com.rsa.SecureEncryption" > outputs/secure-encryption.txt
-mvn exec:java -Dexec.mainClass="com.rsa.SecureDecryption" > outputs/secure-decryption.txt
-mvn exec:java -Dexec.mainClass="com.rsa.SecureSigning" > outputs/secure-signing.txt
-mvn exec:java -Dexec.mainClass="com.rsa.SecureVerification" > outputs/secure-verification.txt
+mvn exec:java -Dexec.mainClass="com.rsa.secure.KeyGeneration" > outputs/secure-rsa/key-generation.txt
+mvn exec:java -Dexec.mainClass="com.rsa.secure.Encryption" > outputs/secure-rsa/encryption.txt
+mvn exec:java -Dexec.mainClass="com.rsa.secure.Decryption" > outputs/secure-rsa/decryption.txt
+mvn exec:java -Dexec.mainClass="com.rsa.secure.Signing" > outputs/secure-rsa/signing.txt
+mvn exec:java -Dexec.mainClass="com.rsa.secure.Verification" > outputs/secure-rsa/verification.txt
+mvn exec:java -Dexec.mainClass="com.rsa.secure.X509Verification" > outputs/secure-rsa/x509-verification.txt
 ```
 
 To get only the program output without Maven build logs, use the `-q` flag:
 
 ```bash
-mvn exec:java -Dexec.mainClass="com.rsa.SecureKeyGeneration" -q > outputs/secure-key-generation.txt
+mvn exec:java -Dexec.mainClass="com.rsa.secure.KeyGeneration" -q > outputs/secure-rsa/key-generation.txt
+mvn exec:java -Dexec.mainClass="com.rsa.secure.Encryption" -q > outputs/secure-rsa/encryption.txt
+mvn exec:java -Dexec.mainClass="com.rsa.secure.Decryption" -q > outputs/secure-rsa/decryption.txt
+mvn exec:java -Dexec.mainClass="com.rsa.secure.Signing" -q > outputs/secure-rsa/signing.txt
+mvn exec:java -Dexec.mainClass="com.rsa.secure.Verification" -q > outputs/secure-rsa/verification.txt
+mvn exec:java -Dexec.mainClass="com.rsa.secure.X509Verification" -q > outputs/secure-rsa/x509-verification.txt
 ```
 
 To view an output file:
 
 ```bash
-cat outputs/secure-key-generation.txt
+cat outputs/secure-rsa/key-generation.txt
 ```
 
 ---

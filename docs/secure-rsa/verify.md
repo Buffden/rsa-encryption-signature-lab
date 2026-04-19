@@ -30,13 +30,13 @@ Verify an RSA-PSS signature and demonstrate that a corrupted signature fails —
 ## Run
 
 ```bash
-mvn exec:java -Dexec.mainClass="com.rsa.SecureVerification"
+mvn exec:java -Dexec.mainClass="com.rsa.secure.Verification"
 ```
 
 To save output to a file:
 
 ```bash
-mvn exec:java -Dexec.mainClass="com.rsa.SecureVerification" > outputs/secure-verification.txt
+mvn exec:java -Dexec.mainClass="com.rsa.secure.Verification" > outputs/secure-rsa/verification.txt
 ```
 
 ---
@@ -63,7 +63,7 @@ Verification (corrupted signature) : INVALID
 
 ## Planned Class
 
-`SecureVerification.java`
+`com.rsa.secure.Verification`
 
 ---
 

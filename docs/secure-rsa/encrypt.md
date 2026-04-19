@@ -28,13 +28,13 @@ Encrypt a plaintext message using RSA-OAEP padding instead of raw textbook RSA.
 ## Run
 
 ```bash
-mvn exec:java -Dexec.mainClass="com.rsa.SecureEncryption"
+mvn exec:java -Dexec.mainClass="com.rsa.secure.Encryption"
 ```
 
 To save output to a file:
 
 ```bash
-mvn exec:java -Dexec.mainClass="com.rsa.SecureEncryption" > outputs/secure-encryption.txt
+mvn exec:java -Dexec.mainClass="com.rsa.secure.Encryption" > outputs/secure-rsa/encryption.txt
 ```
 
 ---
@@ -65,7 +65,7 @@ Observation: RSA-OAEP is probabilistic — same plaintext produces different cip
 
 ## Planned Class
 
-`SecureEncryption.java`
+`com.rsa.secure.Encryption`
 
 ---
 
