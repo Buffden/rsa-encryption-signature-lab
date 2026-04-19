@@ -1,0 +1,25 @@
+instructions/
+
+# Maven build output
+target/
+
+# IDE — IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# IDE — VS Code
+.vscode/
+
+# IDE — Eclipse
+.classpath
+.project
+.settings/
+
+# macOS
+.DS_Store
+
+# Java
+*.class
+*.jar
