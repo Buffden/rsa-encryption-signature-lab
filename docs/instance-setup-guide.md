@@ -135,6 +135,33 @@ mvn exec:java -Dexec.mainClass="com.rsa.Verification"
 mvn exec:java -Dexec.mainClass="com.rsa.X509Verification"
 ```
 
+### Save outputs to text files
+
+```bash
+# Create the outputs directory
+mkdir -p outputs
+
+# Run each task and redirect output to a file
+mvn exec:java -Dexec.mainClass="com.rsa.KeyGeneration" > outputs/key-generation.txt
+mvn exec:java -Dexec.mainClass="com.rsa.Encryption" > outputs/encryption.txt
+mvn exec:java -Dexec.mainClass="com.rsa.Decryption" > outputs/decryption.txt
+mvn exec:java -Dexec.mainClass="com.rsa.Signing" > outputs/signing.txt
+mvn exec:java -Dexec.mainClass="com.rsa.Verification" > outputs/verification.txt
+mvn exec:java -Dexec.mainClass="com.rsa.X509Verification" > outputs/x509-verification.txt
+```
+
+To get only the program output (without Maven build logs), use the `-q` flag:
+
+```bash
+mvn exec:java -Dexec.mainClass="com.rsa.KeyGeneration" -q > outputs/key-generation.txt
+```
+
+To view an output file:
+
+```bash
+cat outputs/key-generation.txt
+```
+
 ---
 
 ## Instance Summary
