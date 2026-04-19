@@ -8,19 +8,19 @@ public class Signing {
         System.out.println(label + value.toString(16).toUpperCase());
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
-        BigInteger n = new BigInteger(Constants.PUBLIC_MODULUS, 16);
-        BigInteger d = new BigInteger(Constants.PRIVATE_EXPONENT, 16);
-        BigInteger m1 = new BigInteger(Constants.MSG_OWE_2000, 16);
-        BigInteger m2 = new BigInteger(Constants.MSG_OWE_3000, 16);
+        KeyGeneration keyGen = new KeyGeneration();
+        keyGen.generate();
+
+        BigInteger m1 = new BigInteger(1, Constants.MSG_OWE_2000.getBytes("UTF-8"));
+        BigInteger m2 = new BigInteger(1, Constants.MSG_OWE_3000.getBytes("UTF-8"));
+
+        BigInteger s1 = m1.modPow(keyGen.getD(), keyGen.getN());
+        BigInteger s2 = m2.modPow(keyGen.getD(), keyGen.getN());
 
         printBN("M1 = ", m1);
         printBN("M2 = ", m2);
-
-        BigInteger s1 = m1.modPow(d, n);
-        BigInteger s2 = m2.modPow(d, n);
-
         printBN("S1 = ", s1);
         printBN("S2 = ", s2);
 

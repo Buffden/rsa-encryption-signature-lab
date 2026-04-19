@@ -8,21 +8,19 @@ public class Decryption {
         System.out.println(label + value.toString(16).toUpperCase());
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
         Encryption enc = new Encryption();
         enc.encrypt();
 
-        BigInteger n = new BigInteger(Constants.PUBLIC_MODULUS, 16);
-        BigInteger d = new BigInteger(Constants.PRIVATE_EXPONENT, 16);
+        BigInteger n = enc.getKeyGeneration().getN();
+        BigInteger d = enc.getKeyGeneration().getD();
         BigInteger c = enc.getCiphertext();
-
-        System.out.println();
-        printBN("d = ", d);
-        printBN("c = ", c);
 
         BigInteger m = c.modPow(d, n);
 
+        printBN("d = ", d);
+        printBN("c = ", c);
         printBN("m = ", m);
         System.out.println("ASCII = " + new String(m.toByteArray()));
     }

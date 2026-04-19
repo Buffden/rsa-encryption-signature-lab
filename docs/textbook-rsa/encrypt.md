@@ -10,8 +10,8 @@ Encrypt a plaintext message using the RSA public key `(e, n)`.
 
 | Parameter | Value |
 | --- | --- |
-| n | DCBFFE3E51F62E09CE7032E2677A78946A849DC4CDDE3A4D0CB81629242FB1A5 |
-| e | 010001 (decimal: 65537) |
+| n | E103ABD94892E3E74AFD724BF28E78366D9676BCCC70118BD0AA1968DBB143D1 |
+| e | 0D88C3 (decimal: 895,171) |
 | Message (M) | A top secret! |
 
 > The private key `d` is also provided to help verify the encryption result:
