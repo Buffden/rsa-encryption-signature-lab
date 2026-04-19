@@ -67,7 +67,7 @@ Leave both **unchecked**:
 - Allow HTTP traffic — No
 - Allow HTTPS traffic — No
 
-> No inbound traffic is needed. The project only runs CLI programs and connects outbound to HTTPS servers for Task 6 certificate verification.
+> No inbound traffic is needed. The project only runs CLI programs and connects outbound to HTTPS servers for X.509 certificate verification.
 
 ---
 
@@ -127,12 +127,12 @@ cd rsa-encryption-signature-lab
 mvn compile
 
 # Run individual tasks
-mvn exec:java -Dexec.mainClass="com.rsa.Task1_KeyGen"
-mvn exec:java -Dexec.mainClass="com.rsa.Task2_Encrypt"
-mvn exec:java -Dexec.mainClass="com.rsa.Task3_Decrypt"
-mvn exec:java -Dexec.mainClass="com.rsa.Task4_Sign"
-mvn exec:java -Dexec.mainClass="com.rsa.Task5_Verify"
-mvn exec:java -Dexec.mainClass="com.rsa.Task6_X509Verify"
+mvn exec:java -Dexec.mainClass="com.rsa.KeyGeneration"
+mvn exec:java -Dexec.mainClass="com.rsa.Encryption"
+mvn exec:java -Dexec.mainClass="com.rsa.Decryption"
+mvn exec:java -Dexec.mainClass="com.rsa.Signing"
+mvn exec:java -Dexec.mainClass="com.rsa.Verification"
+mvn exec:java -Dexec.mainClass="com.rsa.X509Verification"
 ```
 
 ---
