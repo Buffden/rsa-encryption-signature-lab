@@ -26,6 +26,21 @@ This folder contains documentation for each step of the RSA Encryption and Signa
 
 ---
 
+## What This Project Proves
+
+RSA is not magic — it is math. Every operation in this project reduces to one formula: modular exponentiation.
+
+The six tasks together tell a complete story:
+
+- Tasks 1–3 show the full encryption cycle: derive a private key from primes, encrypt a message with the public key, decrypt it back with the private key
+- Task 4 shows that signing is mathematically the same operation as decryption — and that even a one-character change in the message produces a completely unrecognizable signature
+- Task 5 shows that verification is just encryption in reverse — and that a single corrupted byte in the signature causes it to fail entirely
+- Task 6 takes everything above and applies it to a live HTTPS connection — manually replicating what every browser does silently on every secure request
+
+The conclusion: trust on the internet is built on the same primitive repeated at scale. A CA signs a certificate. A browser verifies it. The math is identical to Tasks 4 and 5 — just with larger keys and a real target.
+
+---
+
 ## Reference
 
 All tasks follow the SEED Labs RSA Public-Key Encryption and Signature Lab specification.
