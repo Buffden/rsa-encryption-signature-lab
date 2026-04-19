@@ -1,4 +1,5 @@
 instructions/
+outputs/
 
 # Maven build output
 target/
