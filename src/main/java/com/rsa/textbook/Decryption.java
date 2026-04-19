@@ -10,11 +10,14 @@ public class Decryption {
 
     public static void main(String[] args) {
 
+        Encryption enc = new Encryption();
+        enc.encrypt();
+
         BigInteger n = new BigInteger(Constants.PUBLIC_MODULUS, 16);
         BigInteger d = new BigInteger(Constants.PRIVATE_EXPONENT, 16);
-        BigInteger c = new BigInteger(Constants.CIPHERTEXT, 16);
+        BigInteger c = enc.getCiphertext();
 
-        printBN("n = ", n);
+        System.out.println();
         printBN("d = ", d);
         printBN("c = ", c);
 

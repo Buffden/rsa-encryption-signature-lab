@@ -12,7 +12,6 @@ public class Constants {
     public static final String PUBLIC_EXPONENT = "010001";
     public static final String PRIVATE_EXPONENT = "74D806F9F3A62BAE331FFE3F0A68AFE35B3D2E4794148AACBC26AA381CD7D30D";
     public static final String PLAINTEXT = "4120746f702073656372657421"; // "A top secret!"
-    public static final String CIPHERTEXT = "8C0F971DF2F3672B28811407E2DABBE1DA0FEBBBDFC7DCB67396567EA1E2493F";
 
     // two messages for signing — differ only in the dollar amount
     public static final String MSG_OWE_2000 = "49206F776520796F752024323030302E"; // "I owe you $2000."

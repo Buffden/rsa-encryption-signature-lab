@@ -8,6 +8,7 @@ This folder contains documentation for each task of the RSA Encryption and Signa
 
 | File | Description |
 | --- | --- |
+| [flow.md](flow.md) | End-to-end data flow for both textbook and secure RSA — inputs, outputs, and task connections |
 | [textbook-rsa/instance-setup-guide.md](textbook-rsa/instance-setup-guide.md) | GCP Compute Engine instance setup and environment configuration |
 | [textbook-rsa/running.md](textbook-rsa/running.md) | Cloning, building, and running textbook RSA tasks (`com.rsa.textbook`) |
 | [secure-rsa/instance-setup-guide.md](secure-rsa/instance-setup-guide.md) | GCP Compute Engine instance setup and environment configuration |
