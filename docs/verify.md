@@ -1,0 +1,32 @@
+# RSA Digital Signature — Verification
+
+## Objective
+
+Verify an RSA digital signature using the sender's public key `(e, n)` and demonstrate how any modification to the signature causes verification to fail.
+
+---
+
+## Given Values
+
+| Parameter | Value |
+| --- | --- |
+| n | AE1CD4DC432798D933779FBD46C6E1247F0CF1233595113AA51B450F18116115 |
+| e | 010001 (decimal: 65537) |
+| Message (M) | Launch a missile. |
+| Signature (S) | 643D6F34902D9C7EC90CB0B2BCA36C47FA37165C0005CAB026C0542CBDB6802F |
+
+---
+
+## What Needs to Be Done
+
+- Verify the signature using the sender's public key: `m' = s^e mod n`
+- If the recovered `m'` matches the original message `M`, the signature is valid
+- Corrupt the signature by changing the last byte from `2F` to `3F`
+- Repeat verification with the corrupted signature and observe the result
+
+---
+
+## Reference
+
+SEED Labs — RSA Public-Key Encryption and Signature Lab
+[https://seedsecuritylabs.org/Labs_20.04/Crypto/Crypto_RSA/](https://seedsecuritylabs.org/Labs_20.04/Crypto/Crypto_RSA/)
