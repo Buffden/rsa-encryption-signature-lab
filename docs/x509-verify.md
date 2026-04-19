@@ -39,6 +39,55 @@ To verify manually:
 
 ---
 
+## Run
+
+```bash
+mvn exec:java -Dexec.mainClass="com.rsa.X509Verification"
+```
+
+To save output to a file:
+
+```bash
+mvn exec:java -Dexec.mainClass="com.rsa.X509Verification" > outputs/x509-verification.txt
+```
+
+---
+
+## Expected Output
+
+```text
+Target: https://www.amazon.com
+
+Server cert subject : CN=www.amazon.com
+CA cert subject     : CN=DigiCert Global CA G2, O=DigiCert Inc, C=US
+
+CA n = D3487CBEF305865D5BD52F854E4BE086...
+CA e = 10001
+
+Signature length    : 256 bytes
+Signature (hex)     : 01A239E79132F6C84F88A47F2511A2A4...
+
+Decrypted block     : 01FFFFFFFFFFFF...003031300D0609608648016503040201050004200C38287164B327B8...
+
+Embedded hash (M')  : 0C38287164B327B8E3DC9A14F1B774BB07D9740D97A34BA7FD93320BEE7F7EA3
+Computed hash (M)   : 0C38287164B327B8E3DC9A14F1B774BB07D9740D97A34BA7FD93320BEE7F7EA3
+
+Verification result : VALID
+```
+
+> The CA certificate, signature bytes, and hashes will differ on each run as Amazon rotates its certificates periodically.
+
+---
+
+## Observations
+
+- The decrypted block starts with `01 FF FF FF...` — this is the PKCS#1 v1.5 signature padding. The `FF` bytes are stripped to find the `00` separator, after which the DigestInfo and hash follow
+- The embedded hash (`M'`) recovered from the signature exactly matches the SHA-256 hash computed independently over the TBSCertificate bytes
+- This confirms the certificate was signed by the CA and has not been tampered with
+- This is exactly what every browser does silently when you visit an HTTPS website — just automated and in milliseconds
+
+---
+
 ## Reference
 
 SEED Labs — RSA Public-Key Encryption and Signature Lab

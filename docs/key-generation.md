@@ -27,6 +27,42 @@ Given three numbers `p`, `q`, and `e`, compute the RSA private key `d`.
 
 ---
 
+## Run
+
+```bash
+mvn exec:java -Dexec.mainClass="com.rsa.KeyGeneration"
+```
+
+To save output to a file:
+
+```bash
+mvn exec:java -Dexec.mainClass="com.rsa.KeyGeneration" > outputs/key-generation.txt
+```
+
+---
+
+## Expected Output
+
+```text
+p   = F7E75FDC469067FFDC4E847C51F452DF
+q   = E85CED54AF57E53E092113E62F436F4F
+e   = D88C3
+n   = E103ABD94892E3E74AFD724BF28E78366D9676BCCC70118BD0AA1968DBB143D1
+phi = E103ABD94892E3E74AFD724BF28E78348D52298BD687C44DEB3A81065A7981A4
+d   = 3587A24598E5F2A21DB007D89D18CC50ABA5075BA19A33890FE7C28A9B496AEB
+```
+
+---
+
+## Observations
+
+- `n` is the product of `p` and `q` — the RSA modulus
+- `phi` is Euler's Totient: `(p-1) * (q-1)` — slightly smaller than `n`
+- `d` is the modular inverse of `e` with respect to `phi` — this is the private key
+- Knowing `d` allows decryption; keeping it secret is the entire basis of RSA security
+
+---
+
 ## Reference
 
 SEED Labs — RSA Public-Key Encryption and Signature Lab

@@ -4,11 +4,19 @@ This folder contains documentation for each step of the RSA Encryption and Signa
 
 ---
 
+## Setup & Environment
+
+| File | Description |
+| --- | --- |
+| [instance-setup-guide.md](instance-setup-guide.md) | GCP Compute Engine instance setup and environment configuration |
+| [running.md](running.md) | Cloning, building, and preparing to run tasks |
+
+---
+
 ## Contents
 
 | # | File | Description |
 | --- | --- | --- |
-| 0 | [instance-setup-guide.md](instance-setup-guide.md) | GCP Compute Engine instance setup and environment configuration |
 | 1 | [key-generation.md](key-generation.md) | Deriving the RSA private key from primes p, q, and public exponent e |
 | 2 | [encrypt.md](encrypt.md) | Encrypting a plaintext message using the RSA public key |
 | 3 | [decrypt.md](decrypt.md) | Decrypting a ciphertext using the RSA private key |

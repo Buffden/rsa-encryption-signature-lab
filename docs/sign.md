@@ -31,6 +31,41 @@ Generate RSA digital signatures for two messages using the private key `(d, n)` 
 
 ---
 
+## Run
+
+```bash
+mvn exec:java -Dexec.mainClass="com.rsa.Signing"
+```
+
+To save output to a file:
+
+```bash
+mvn exec:java -Dexec.mainClass="com.rsa.Signing" > outputs/signing.txt
+```
+
+---
+
+## Expected Output
+
+```text
+M1 = 49206F776520796F752024323030302E
+M2 = 49206F776520796F752024333030302E
+S1 = 55A4E7F17F04CCFE2766E1EB32ADDBA890BBE92A6FBE2D785ED6E73CCB35E4CB
+S2 = BCC20FB7568E5D48E434C387C06A6025E90D29D848AF9C3EBAC0135D99305822
+Observation: signatures differ completely even for a small message change.
+```
+
+---
+
+## Observations
+
+- M1 and M2 differ by only one character (`2` vs `3` in the dollar amount)
+- S1 and S2 are completely different — they share no visible pattern
+- This is the **avalanche effect**: a tiny change in input causes a completely different output
+- This property is essential for digital signature security — an attacker cannot predict or forge a signature by slightly modifying a known one
+
+---
+
 ## Reference
 
 SEED Labs — RSA Public-Key Encryption and Signature Lab
