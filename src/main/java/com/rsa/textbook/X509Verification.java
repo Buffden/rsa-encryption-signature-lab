@@ -1,4 +1,4 @@
-package com.rsa;
+package com.rsa.textbook;
 
 import javax.net.ssl.*;
 import java.math.BigInteger;

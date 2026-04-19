@@ -1,20 +1,55 @@
 # Docs
 
-This folder contains documentation for each step of the RSA Encryption and Signature Lab.
+This folder contains documentation for each task of the RSA Encryption and Signature Lab.
 
 ---
 
-## Contents
+## Setup & Environment
+
+| File | Description |
+| --- | --- |
+| [flow.md](flow.md) | End-to-end data flow for both textbook and secure RSA — inputs, outputs, and task connections |
+| [textbook-rsa/instance-setup-guide.md](textbook-rsa/instance-setup-guide.md) | GCP Compute Engine instance setup and environment configuration |
+| [textbook-rsa/running.md](textbook-rsa/running.md) | Cloning, building, and running textbook RSA tasks (`com.rsa.textbook`) |
+| [secure-rsa/instance-setup-guide.md](secure-rsa/instance-setup-guide.md) | GCP Compute Engine instance setup and environment configuration |
+| [secure-rsa/running.md](secure-rsa/running.md) | Cloning, building, and running secure-rsa tasks (`com.rsa.secure`) |
+
+---
+
+## Textbook RSA
+
+RSA is not magic — it is math. Every operation reduces to one formula: modular exponentiation.
+
+The six tasks tell a complete story:
+
+- Tasks 1–3 show the full encryption cycle: derive a private key from primes, encrypt a message with the public key, decrypt it back with the private key
+- Task 4 shows that signing is mathematically the same operation as decryption — and that even a one-character change in the message produces a completely unrecognizable signature
+- Task 5 shows that verification is just encryption in reverse — and that a single corrupted byte in the signature causes it to fail entirely
+- Task 6 takes everything above and applies it to a live HTTPS connection — manually replicating what every browser does silently on every secure request
 
 | # | File | Description |
 | --- | --- | --- |
-| 0 | [instance-setup-guide.md](instance-setup-guide.md) | GCP Compute Engine instance setup and environment configuration |
-| 1 | [key-generation.md](key-generation.md) | Deriving the RSA private key from primes p, q, and public exponent e |
-| 2 | [encrypt.md](encrypt.md) | Encrypting a plaintext message using the RSA public key |
-| 3 | [decrypt.md](decrypt.md) | Decrypting a ciphertext using the RSA private key |
-| 4 | [sign.md](sign.md) | Signing messages and observing the avalanche effect |
-| 5 | [verify.md](verify.md) | Verifying a digital signature and testing with a corrupted signature |
-| 6 | [x509-verify.md](x509-verify.md) | Manual X.509 certificate verification using RSA and SHA-256 |
+| 1 | [textbook-rsa/key-generation.md](textbook-rsa/key-generation.md) | Deriving the RSA private key from primes p, q, and public exponent e |
+| 2 | [textbook-rsa/encrypt.md](textbook-rsa/encrypt.md) | Encrypting a plaintext message using the RSA public key |
+| 3 | [textbook-rsa/decrypt.md](textbook-rsa/decrypt.md) | Decrypting a ciphertext using the RSA private key |
+| 4 | [textbook-rsa/sign.md](textbook-rsa/sign.md) | Signing messages and observing the avalanche effect |
+| 5 | [textbook-rsa/verify.md](textbook-rsa/verify.md) | Verifying a digital signature and testing with a corrupted signature |
+| 6 | [textbook-rsa/x509-verify.md](textbook-rsa/x509-verify.md) | Manual X.509 certificate verification using RSA and SHA-256 |
+
+---
+
+## Secure RSA
+
+The same six tasks rebuilt under `com.rsa.secure` using real-world standards — RSA-OAEP, RSA-PSS, secure key generation, and constant-time verification.
+
+| # | File | Class | Description |
+| --- | --- | --- | --- |
+| 1 | [secure-rsa/key-generation.md](secure-rsa/key-generation.md) | `com.rsa.secure.KeyGeneration` | Secure 2048-bit key generation using SecureRandom |
+| 2 | [secure-rsa/encrypt.md](secure-rsa/encrypt.md) | `com.rsa.secure.Encryption` | Probabilistic encryption using RSA-OAEP with SHA-256 |
+| 3 | [secure-rsa/decrypt.md](secure-rsa/decrypt.md) | `com.rsa.secure.Decryption` | Decryption of RSA-OAEP encrypted ciphertext |
+| 4 | [secure-rsa/sign.md](secure-rsa/sign.md) | `com.rsa.secure.Signing` | Signing with SHA-256 hashing and RSA-PSS |
+| 5 | [secure-rsa/verify.md](secure-rsa/verify.md) | `com.rsa.secure.Verification` | Signature verification with RSA-PSS and constant-time comparison |
+| 6 | [secure-rsa/x509-verify.md](secure-rsa/x509-verify.md) | `com.rsa.secure.X509Verification` | Full X.509 chain validation with expiry, hostname, and revocation checks |
 
 ---
 
